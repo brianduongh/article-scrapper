@@ -15,7 +15,7 @@ module.exports = function(app) {
 
   // Scrape route
   app.get('/scrape', (req, res) => {
-    axios.get('http://shoryuken.com/').then(response => {
+    axios.get('https://shoryuken.com/').then(response => {
       const $ = cheerio.load(response.data);
       // For each article
       $('article').each((i, element) => {
