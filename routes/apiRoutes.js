@@ -1,6 +1,7 @@
 const db = require('../models');
 
 module.exports = function(app) {
+  // Get route for specific article
   app.get('/articles/:id', (req, res) => {
     db.Article.findOne({ _id: req.params.id })
       .populate('comment')
@@ -12,6 +13,7 @@ module.exports = function(app) {
       });
   });
 
+  // Scrape route
   app.get('/scrape', (req, res) => {
     axios.get('http://shoryuken.com/').then(response => {
       const $ = cheerio.load(response.data);
