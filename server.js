@@ -20,7 +20,9 @@ app.engine('handlebars', exphbs({ defaultLayout: 'main' }));
 app.set('view engine', 'handlebars')
 
 // Connect to the Mongo DB
-mongoose.connect('mongodb://localhost/fightdb', { useNewUrlParser: true });
+// If deployed, use the deployed database. Otherwise use the local mongoHeadlines database
+const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost/fightdb';
+mongoose.connect(MONGODB_URI);
 
 // Routes
 require("./routes/apiRoutes")(app);
