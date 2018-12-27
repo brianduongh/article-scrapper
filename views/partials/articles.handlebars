@@ -1,0 +1,14 @@
+<ul class="list-group">
+  {{#each articles}}
+    <li id="article-item" class="list-group-item" data-id={{_id}}>
+      <img src={{img}} alt="placeholder"></img>
+      <a href={{this.link}}>{{this.title}}</a>
+      <br>
+      Comment: <span data-comment={{_id}}>{{this.comment.body}}</span>
+      <form class="form-inline float-right">
+        <input id="body-input" data-input={{_id}} class="form-control" type="search" placeholder="Add a comment" aria-label="Search">
+        <button data-id={{_id}} class="btn btn-outline-success save-comment">Comment</button>
+      </form>
+    </li>
+  {{/each}}
+</ul>

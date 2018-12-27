@@ -1,0 +1,12 @@
+img {
+  float:left;
+  padding-right:15px;
+  max-width: 200px;
+}
+
+.jumbotron {
+  background-image: url("../assets/umvc3banner.jpg");
+  background-size: cover;
+  text-align: center;
+  color: white;
+}
